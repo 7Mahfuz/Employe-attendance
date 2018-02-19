@@ -1,0 +1,71 @@
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\obj\Debug\Employee attendance Web.csprojResolveAssemblyReference.cache
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\obj\Debug\Employee attendance Web.csproj.CoreCompileInputs.cache
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\ApplicationInsights.config
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\Employee attendance Web.dll.config
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\Employee attendance Web.dll
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\Employee attendance Web.pdb
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\Antlr3.Runtime.dll
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\EntityFramework.dll
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\EntityFramework.SqlServer.dll
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\Microsoft.AI.Agent.Intercept.dll
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\Microsoft.AI.DependencyCollector.dll
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\Microsoft.AI.PerfCounterCollector.dll
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\Microsoft.AI.ServerTelemetryChannel.dll
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\Microsoft.AI.Web.dll
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\Microsoft.AI.WindowsServer.dll
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\Microsoft.ApplicationInsights.dll
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\Microsoft.AspNet.Identity.Core.dll
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\Microsoft.AspNet.Identity.Owin.dll
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\Microsoft.Owin.dll
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\Microsoft.Owin.Security.Cookies.dll
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\Microsoft.Owin.Security.dll
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\Microsoft.Owin.Security.Facebook.dll
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\Microsoft.Owin.Security.Google.dll
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\Microsoft.Owin.Security.OAuth.dll
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\Microsoft.Owin.Security.Twitter.dll
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\Microsoft.Web.Infrastructure.dll
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\Newtonsoft.Json.dll
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\Owin.dll
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\System.Web.Helpers.dll
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\System.Web.Mvc.dll
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\System.Web.Optimization.dll
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\System.Web.Razor.dll
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\System.Web.WebPages.Deployment.dll
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\System.Web.WebPages.dll
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\System.Web.WebPages.Razor.dll
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\WebGrease.dll
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\System.Web.Helpers.xml
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\System.Web.Mvc.xml
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\System.Web.Optimization.xml
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\System.Web.Razor.xml
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\System.Web.WebPages.xml
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\System.Web.WebPages.Deployment.xml
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\System.Web.WebPages.Razor.xml
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\Antlr3.Runtime.pdb
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\Newtonsoft.Json.xml
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\EntityFramework.xml
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\EntityFramework.SqlServer.xml
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\Microsoft.AspNet.Identity.Core.xml
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\Microsoft.AspNet.Identity.Owin.xml
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\Microsoft.Owin.xml
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\Microsoft.Owin.Security.xml
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\Microsoft.Owin.Security.Facebook.xml
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\Microsoft.Owin.Security.Cookies.xml
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\Microsoft.Owin.Security.OAuth.xml
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\Microsoft.Owin.Security.Google.xml
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\Microsoft.Owin.Security.Twitter.xml
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\Microsoft.ApplicationInsights.xml
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\Microsoft.AI.DependencyCollector.xml
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\Microsoft.AI.ServerTelemetryChannel.xml
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\Microsoft.AI.WindowsServer.xml
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\bin\Microsoft.AI.Web.xml
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\obj\Debug\Employee attendance Web.dll
+G:\Pros\Employee Attendence\Employee-attendance\Employee attendance Web\Employee attendance Web\obj\Debug\Employee attendance Web.pdb

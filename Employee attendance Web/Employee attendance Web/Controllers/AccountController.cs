@@ -17,12 +17,14 @@ namespace Employee_attendance_Web.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
-
+        ApplicationDbContext context;
+       
         public AccountController()
         {
+            context = new ApplicationDbContext();
         }
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
+        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
             UserManager = userManager;
             SignInManager = signInManager;
@@ -34,9 +36,9 @@ namespace Employee_attendance_Web.Controllers
             {
                 return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
             }
-            private set 
-            { 
-                _signInManager = value; 
+            private set
+            {
+                _signInManager = value;
             }
         }
 
@@ -72,14 +74,35 @@ namespace Employee_attendance_Web.Controllers
             {
                 return View(model);
             }
-
+            
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
-            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+            var result = await SignInManager.PasswordSignInAsync(model.UserName, model.Password, model.RememberMe, shouldLockout: false);
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
+                    {
+                        
+
+                        EmployeeAttendanceContext _context = new EmployeeAttendanceContext();
+
+                        int Who = _context.Employee.Count(x => x.Username == model.UserName);
+                        if (Who ==1)
+                        {
+                            int ID = _context.Employee.FirstOrDefault(x => x.Username == model.UserName).Id;
+                            Attendance attendance = new Attendance();
+                            attendance.Id = ID;
+                            attendance.Username = model.UserName;
+                            attendance.Name = _context.Employee.FirstOrDefault(x => x.Id == ID).Name;
+                            attendance.Date = DateTime.Today.Date;
+                            attendance.Enter = DateTime.Now;
+                            attendance.Out = DateTime.Now;
+                            attendance.Timing = "Test";
+
+                            _context.Attendance.Add(attendance); _context.SaveChanges();
+                        }
+                        return RedirectToLocal(returnUrl);
+                    }
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
@@ -120,7 +143,7 @@ namespace Employee_attendance_Web.Controllers
             // If a user enters incorrect codes for a specified amount of time then the user account 
             // will be locked out for a specified amount of time. 
             // You can configure the account lockout settings in IdentityConfig
-            var result = await SignInManager.TwoFactorSignInAsync(model.Provider, model.Code, isPersistent:  model.RememberMe, rememberBrowser: model.RememberBrowser);
+            var result = await SignInManager.TwoFactorSignInAsync(model.Provider, model.Code, isPersistent: model.RememberMe, rememberBrowser: model.RememberBrowser);
             switch (result)
             {
                 case SignInStatus.Success:
@@ -136,9 +159,12 @@ namespace Employee_attendance_Web.Controllers
 
         //
         // GET: /Account/Register
-        [AllowAnonymous]
+        
+
         public ActionResult Register()
         {
+            ViewBag.Name = new SelectList(context.Roles.Where(u => !u.Name.Contains("Boom"))
+                                            .ToList(), "Name", "Name");
             return View();
         }
 
@@ -151,20 +177,26 @@ namespace Employee_attendance_Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    
-                    // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
+                    //await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+
+                    // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
-
-                    return RedirectToAction("Index", "Home");
+                    //Assign Role to user Here   
+                    await this.UserManager.AddToRoleAsync(user.Id, model.UserRoles);
+                    //................
+                    
+                    //Ends Here 
+                    return RedirectToAction("Index", "Admin");
                 }
+                ViewBag.Name = new SelectList(context.Roles.Where(u => !u.Name.Contains("Boom"))
+                                          .ToList(), "Name", "Name");
                 AddErrors(result);
             }
 
@@ -209,7 +241,7 @@ namespace Employee_attendance_Web.Controllers
                     return View("ForgotPasswordConfirmation");
                 }
 
-                // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
+                // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                 // Send an email with this link
                 // string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
                 // var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);		
@@ -391,6 +423,19 @@ namespace Employee_attendance_Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {
+            string Name = User.Identity.Name;
+            EmployeeAttendanceContext _context = new EmployeeAttendanceContext();
+            int see = _context.Employee.Count(x => x.Username == Name);
+            if (see == 1)
+            {
+                DateTime today = DateTime.Today.Date;
+                Attendance attendance = _context.Attendance.Where(x => x.Username == Name).Where(y => y.Date == today).First();
+                attendance.Out = DateTime.Now;
+
+                _context.Entry(attendance).State = System.Data.Entity.EntityState.Modified;
+                _context.SaveChanges();
+            }
+            //_context.Attendance.Add(attendance); _context.SaveChanges();
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
             return RedirectToAction("Index", "Home");
         }
@@ -449,7 +494,7 @@ namespace Employee_attendance_Web.Controllers
             {
                 return Redirect(returnUrl);
             }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Users");
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult

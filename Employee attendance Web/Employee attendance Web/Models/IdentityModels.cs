@@ -21,7 +21,7 @@ namespace Employee_attendance_Web.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("EmployeeAttendanceContext", throwIfV1Schema: false)
         {
         }
 
