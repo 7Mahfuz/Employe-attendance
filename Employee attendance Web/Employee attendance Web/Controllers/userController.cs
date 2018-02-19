@@ -53,12 +53,12 @@ namespace Employee_attendance_Web.Controllers
                 if (mark == 1)
                 {
                     //ViewBag.displayMenu = "Yes";
-                    return RedirectToAction("Index", "Admin");
+                    return RedirectToAction("Index", "Home");
                 }
                 if (mark == 2)
                 {
                     //ViewBag.displayMenu = "Yes";
-                    return RedirectToAction("Index", "Employee");
+                    return RedirectToAction("Detail", "Employee");
                 }
                 
                 //return View();

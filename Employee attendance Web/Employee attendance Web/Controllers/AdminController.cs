@@ -10,6 +10,7 @@ using System.Web.Mvc;
 
 namespace Employee_attendance_Web.Controllers
 {
+    [Authorize(Roles ="Admin")]
     public class AdminController : Controller
     {
         private ApplicationSignInManager _signInManager;
@@ -30,12 +31,35 @@ namespace Employee_attendance_Web.Controllers
         // GET: Admin
         public ActionResult Index()
         {
-            
+            if (User.Identity.IsAuthenticated)
+            {
+                string Name = User.Identity.Name;
+                int chk = _context.Employee.Count(x => x.Username == Name);
+
+                if (chk == 0)
+                {
+                    ViewBag.Who = "Admin";
+                }
+                else { ViewBag.Who = "Employee"; }
+
+            }
             return View(_context.Employee.ToList());
         }
 
         public ActionResult Register()
         {
+            if (User.Identity.IsAuthenticated)
+            {
+                string Name = User.Identity.Name;
+                int chk = _context.Employee.Count(x => x.Username == Name);
+
+                if (chk == 0)
+                {
+                    ViewBag.Who = "Admin";
+                }
+                else { ViewBag.Who = "Employee"; }
+
+            }
             ViewBag.Name = new SelectList(context.Roles.Where(u => !u.Name.Contains("Boom"))
                                                .ToList(), "Name", "Name");
             return View();
@@ -55,16 +79,30 @@ namespace Employee_attendance_Web.Controllers
                       
                     await this.UserManager.AddToRoleAsync(user.Id, model.UserRoles);
                     //................
-                    
-                    _context.Employee.Add(model);
-                    _context.SaveChanges();
-
+                    if (model.UserRoles == "Employee")
+                    {
+                        _context.Employee.Add(model);
+                        _context.SaveChanges();
+                        return RedirectToAction("Index", "Admin");
+                    }
                     //Ends Here 
-                    return RedirectToAction("Index", "Admin");
+                    return RedirectToAction("Index");
                 }
                 ViewBag.Name = new SelectList(context.Roles.Where(u => !u.Name.Contains("Boom"))
                                           .ToList(), "Name", "Name");
 
+                if (User.Identity.IsAuthenticated)
+                {
+                    string Name = User.Identity.Name;
+                    int chk = _context.Employee.Count(x => x.Username == Name);
+
+                    if (chk == 0)
+                    {
+                        ViewBag.Who = "Admin";
+                    }
+                    else { ViewBag.Who = "Employee"; }
+
+                }
                 return View();
                 //AddErrors(result);
             }

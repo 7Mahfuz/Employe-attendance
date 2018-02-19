@@ -97,7 +97,7 @@ namespace Employee_attendance_Web.Controllers
                             attendance.Date = DateTime.Today.Date;
                             attendance.Enter = DateTime.Now;
                             attendance.Out = DateTime.Now;
-                            attendance.Timing = "Test";
+                            attendance.Timing = "The app is in Test Mode";
 
                             _context.Attendance.Add(attendance); _context.SaveChanges();
                         }
